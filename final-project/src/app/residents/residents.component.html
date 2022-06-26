@@ -1,0 +1,10 @@
+<div class="container">
+    <h3>רשימת תושבים:</h3>
+    <ol class="list-group list-group-numbered" style="width: 20rem; text-align: right; margin: auto;">
+      <li *ngFor="let resident of residents" class="list-group-item">
+        <a routerLink="/residents/{{resident.Id}}">
+            <span>{{resident.Name}}</span> 
+          </a>
+      </li>
+    </ol>
+  </div>

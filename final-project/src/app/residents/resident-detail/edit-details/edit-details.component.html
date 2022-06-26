@@ -1,0 +1,33 @@
+<div *ngIf="resident" class="container">
+    <h2>עריכת פרטים:</h2>
+   <label for="resident-name">שם: </label>
+      <input id="resident-name" type="text" [(ngModel)]="resident.Name" placeholder="name..." />
+    <br>
+    
+    <div class="card" style="width: 25rem; margin: auto; text-align: right;  ">
+        <img src={{resident.Img}} class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">ת.ז: <input type="number" [(ngModel)]="resident.Id" placeholder="id..." /></h5>
+          <p class="card-text">גיל: <input  type="number" [(ngModel)]="resident.Age" placeholder="age..." /></p>
+          <p class="card-text">מין: <select  [(ngModel)]="resident.Gender" placeholder="gender...">
+            <option selected>בחר...</option>
+            <option value="true">זכר</option>
+            <option value="">נקבה</option>
+          </select></p>
+          <p class="card-text">עיר: <input  type="text" [(ngModel)]="resident.City" placeholder="city..." /></p>
+          <p class="card-text">כתובת: <input  type="text" [(ngModel)]="resident.Address" placeholder="address..." /></p>
+          <p class="card-text">בעיר משנת: <input  type="number" [(ngModel)]="resident.StartYear" placeholder="year..." /></p>
+          <p class="card-text">סטטוס: <select  [(ngModel)]="resident.Status" >
+            <option selected>בחר...</option>
+            <option value="A">רווק</option>
+            <option value="B">נשוי</option>
+            <option value="C">גרוש</option>
+            <option value="D">אלמן</option>
+          </select></p>
+        </div>
+        <button class="btn btn-secondary" (click)="goBack()">חזור</button>
+
+      </div>
+  </div>
+  
+

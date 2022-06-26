@@ -1,0 +1,25 @@
+<div *ngIf="resident" class="container">
+    <h2>{{resident.Name}}</h2>
+    <br>
+    
+    <div class="card" style="width: 25rem; margin: auto; ">
+        <img src={{resident.Img}} class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">ת.ז: {{resident.Id}}</h5>
+          <p class="card-text">גיל: {{resident.Age}}</p>
+          <p class="card-text">מין: {{(resident.Gender) ? "זכר" : "נקבה"}}</p>
+          <p class="card-text">עיר: {{resident.City}}</p>
+          <p class="card-text">כתובת: {{resident.Address}}</p>
+          <p class="card-text">בעיר משנת: {{resident.StartYear}}</p>
+          <p class="card-text">סטטוס: {{(resident.Status=='A')? "רווק" : (resident.Status=='B') ? "נשוי" : (resident.Status=='C') ? "גרוש": (resident.Status=='D') ? "אלמן" : resident.Status}}</p>
+
+          <a routerLink="/resident/edit/{{resident.Id}}"><button class="btn btn-warning">ערוך</button></a> |
+          <button class="btn btn-secondary" (click)="goBack()">חזור</button>
+          
+        </div>
+      </div>
+      
+  
+      
+    
+  </div>

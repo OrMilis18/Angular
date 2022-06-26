@@ -1,0 +1,30 @@
+
+<div class="container">
+    <h3>עובדי העירייה:</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ת.ז</th>
+        <th scope="col">שם עובד</th>
+        <th scope="col">תפקיד</th>
+        <th scope="col">גיל</th>
+        <th scope="col">שעות עבודה</th>
+        <th scope="col">שכר לשעה</th>
+        <th scope="col">סה"כ בחודש</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <th scope="row">{{employee.Id}}</th>
+        <td>{{employee.Name}}</td>
+        <td>{{employee.job}}</td>
+        <td>{{employee.Age}}</td>
+        <td>{{employee.hours}}</td>
+        <td>{{employee.salary}}</td>
+        <td [ngStyle]="{'background-color': (employee.salary*employee.hours>3000) ?  'blue':'red' }" ><b>{{employee.salary*employee.hours}}</b></td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
